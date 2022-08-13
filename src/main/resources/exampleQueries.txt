@@ -1,0 +1,39 @@
+mutation{
+  createUser(user:{firstName: "John", lastName: "Does"}){
+    id,
+    firstName,
+    lastName
+  }
+}
+
+query{
+  findAllUsers{
+    id,
+    firstName
+  }
+}
+
+query{
+  findUserById(id:"7f000001-8297-161e-8182-97f645f90000"){
+    lastName
+  }
+}
+
+mutation{
+  createBook(book:{title: "Harry Potter"}){
+    id,
+    title
+  }
+}
+
+query{
+  findAllBooks{
+    title
+  }
+}
+
+query{
+  findBookById(id:"7f000001-8297-161e-8182-97f6bbb20001"){
+    title
+  }
+}
