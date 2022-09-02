@@ -1,13 +1,13 @@
-package com.example.graphQL.domain.user.input;
+package com.example.graphQL.domain.author.input;
 
-public class UserCreateInput {
+public class AuthorCreateInput {
     private String firstName;
     private String lastName;
 
-    public UserCreateInput() {
+    public AuthorCreateInput() {
     }
 
-    public UserCreateInput(String firstName, String lastName) {
+    public AuthorCreateInput(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }

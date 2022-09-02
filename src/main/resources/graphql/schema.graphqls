@@ -1,11 +1,11 @@
 #Domain Model User
-type User {
+type Author {
     id: String
     firstName: String!
     lastName: String
 }
 
-input UserCreateInput {
+input AuthorCreateInput {
     firstName: String
     lastName: String
 }
@@ -21,14 +21,14 @@ input BookCreateInput {
 }
 
 type Query {
-    findAllUsers: [User]
-    findUserById(id: String!): User
+    findAllAuthors: [Author]
+    findAuthorById(id: String!): Author
     findAllBooks: [Book]
     findBookById(id: String!): Book
 }
 
 #Mutations
 type Mutation {
-    createUser(user: UserCreateInput!): User
+    createAuthor(author: AuthorCreateInput!): Author
     createBook(book: BookCreateInput!): Book
 }

@@ -1,4 +1,4 @@
-package com.example.graphQL.domain.user;
+package com.example.graphQL.domain.author;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID> {
+public interface AuthorRepository extends JpaRepository<Author, UUID> {
 }

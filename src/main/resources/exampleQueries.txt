@@ -1,5 +1,5 @@
 mutation{
-  createUser(user:{firstName: "John", lastName: "Does"}){
+  createUser(author:{firstName: "John", lastName: "Does"}){
     id,
     firstName,
     lastName

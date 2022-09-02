@@ -21,6 +21,8 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.2'
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.4.0'
 	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:13.0.0'
+	implementation 'junit:junit:4.13.1'
+	implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 tasks.named('test') {
