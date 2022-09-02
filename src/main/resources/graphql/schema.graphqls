@@ -15,10 +15,12 @@ type Book {
     id: String
     title: String
     price: Float
+    author: Author
 }
 
 input BookCreateInput {
     title: String!
+    authorId: String!
 }
 
 type Query {

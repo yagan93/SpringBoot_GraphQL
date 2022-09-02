@@ -18,16 +18,17 @@ public class Book extends ExtendedEntity {
     private Double price;
 
     @ManyToOne
-    @JoinColumn(name = "author_id", nullable = false)
+    @JoinColumn(nullable = false)
     private Author author;
 
 
     public Book() {
     }
 
-    public Book(String title, Double price) {
+    public Book(String title, Double price, Author author) {
         this.title = title;
         this.price = price;
+        this.author = author;
     }
 
     public Book(UUID id, String title, Double price, Author author) {

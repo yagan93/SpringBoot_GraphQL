@@ -19,3 +19,14 @@ query{
     firstName
   }
 }
+
+mutation{
+  createBook(book:{title:"Harry Potter", authorId: "7f000001-82fe-165c-8182-fec793910000"}){
+    id,
+	title,
+    author{
+      firstName
+      lastName
+    }
+  }
+}
