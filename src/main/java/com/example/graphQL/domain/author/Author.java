@@ -3,10 +3,7 @@ package com.example.graphQL.domain.author;
 import com.example.graphQL.core.generic.ExtendedEntity;
 import com.example.graphQL.domain.book.Book;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 import java.util.UUID;
 
@@ -43,6 +40,14 @@ public class Author extends ExtendedEntity {
         super(id);
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public String getFirstName() {
