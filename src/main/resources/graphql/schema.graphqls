@@ -26,6 +26,7 @@ type Query {
     findAuthorById(id: String!): Author
     findAllBooks: [Book]
     findBookById(id: String!): Book
+    findAuthorByFirstName(firstname:String): [Author]
 }
 
 #Mutations
