@@ -11,7 +11,7 @@ import java.util.UUID;
 @Component
 public class BookQueryResolver extends ExtendedResolver<Book> implements GraphQLQueryResolver {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     @Autowired
     public BookQueryResolver(BookRepository bookRepository) {
