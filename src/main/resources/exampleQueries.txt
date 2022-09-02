@@ -1,5 +1,5 @@
 mutation{
-  createUser(author:{firstName: "John", lastName: "Does"}){
+  createAuthor(author:{firstName: "Joe", lastName: "Doe"}){
     id,
     firstName,
     lastName
@@ -7,33 +7,8 @@ mutation{
 }
 
 query{
-  findAllUsers{
+  findAllAuthors(pagination:{page: 0, limit: 10}){
     id,
     firstName
-  }
-}
-
-query{
-  findUserById(id:"7f000001-8297-161e-8182-97f645f90000"){
-    lastName
-  }
-}
-
-mutation{
-  createBook(book:{title: "Harry Potter"}){
-    id,
-    title
-  }
-}
-
-query{
-  findAllBooks{
-    title
-  }
-}
-
-query{
-  findBookById(id:"7f000001-8297-161e-8182-97f6bbb20001"){
-    title
   }
 }
