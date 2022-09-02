@@ -12,3 +12,10 @@ query{
     firstName
   }
 }
+
+query{
+  findAllAuthorsByFirstName(firstName:"Joe"){
+    id,
+    firstName
+  }
+}

@@ -23,6 +23,7 @@ public class AuthorMutationResolver extends ExtendedResolver<Author> implements 
         return findOrThrow(authorRepository.findById(author.getId()));
     }
 
+    // TODO: Return void
     public Author deleteAuthor(String id) {
         Author responseAuthor = authorRepository.findById(UUID.fromString(id)).orElseThrow();
         authorRepository.delete(authorRepository.findById(UUID.fromString(id)).orElseThrow());

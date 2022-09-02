@@ -6,8 +6,8 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CustomerSpecifications<T> {
-    public Specification<T> hasAuthorFirstName(String firstName) {
+public class CustomerSpecifications<Author> {
+    public Specification<Author> hasAuthorFirstName(String firstName) {
         return (root, query, builder) -> builder.equal(root.get(Author_.FIRST_NAME), firstName);
     }
 }

@@ -30,10 +30,11 @@ public class Book extends ExtendedEntity {
         this.price = price;
     }
 
-    public Book(UUID id, String title, Double price) {
+    public Book(UUID id, String title, Double price, Author author) {
         super(id);
         this.title = title;
         this.price = price;
+        this.author = author;
     }
 
     public String getTitle() {
@@ -50,5 +51,13 @@ public class Book extends ExtendedEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

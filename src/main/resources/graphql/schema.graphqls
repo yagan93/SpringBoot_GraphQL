@@ -1,4 +1,4 @@
-#Domain Model User
+#Domain Model Author
 type Author {
     id: String
     firstName: String!
@@ -26,7 +26,7 @@ type Query {
     findAuthorById(id: String!): Author
     findAllBooks: [Book]
     findBookById(id: String!): Book
-    findAuthorByFirstName(firstname:String): [Author]
+    findAllAuthorsByFirstName(firstName:String): [Author]
 }
 
 #Mutations

@@ -30,7 +30,7 @@ public class AuthorQueryResolver extends ExtendedResolver<Author> implements Gra
         return findOrThrow(authorRepository.findById(UUID.fromString(id)));
     }
 
-    public List<Author> findAuthorByFirstName(String firstname) {
-        return authorRepository.findAll(customerSpecifications.hasAuthorFirstName(firstname));
+    public List<Author> findAllAuthorsByFirstName(String firstName) {
+        return authorRepository.findAll(customerSpecifications.hasAuthorFirstName(firstName));
     }
 }
