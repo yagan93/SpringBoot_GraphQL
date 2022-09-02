@@ -17,7 +17,7 @@ public class BookMutationResolver extends ExtendedResolver<Book> implements Grap
     }
 
     public Book createBook(BookCreateInput bookCreateInput) {
-        Book book = bookRepository.save(new Book(bookCreateInput.getTitle()));
+        Book book = bookRepository.save(new Book(bookCreateInput.getTitle(), bookCreateInput.getPrice()));
         return findOrThrow(bookRepository.findById(book.getId()));
     }
 }
