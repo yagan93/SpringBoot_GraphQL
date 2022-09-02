@@ -18,7 +18,7 @@ public class Book extends ExtendedEntity {
     private Double price;
 
     @ManyToOne
-    @JoinColumn(name="author_id", nullable=false)
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
 

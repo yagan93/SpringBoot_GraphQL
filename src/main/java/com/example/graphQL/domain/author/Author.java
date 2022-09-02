@@ -3,7 +3,10 @@ package com.example.graphQL.domain.author;
 import com.example.graphQL.core.generic.ExtendedEntity;
 import com.example.graphQL.domain.book.Book;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Set;
 import java.util.UUID;
 
@@ -17,9 +20,8 @@ public class Author extends ExtendedEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy="author")
+    @OneToMany(mappedBy = "author")
     private Set<Book> books;
-
 
 
     public Author() {

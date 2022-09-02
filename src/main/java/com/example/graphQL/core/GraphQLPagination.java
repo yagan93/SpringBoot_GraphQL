@@ -12,7 +12,7 @@ public class GraphQLPagination {
         this.limit = limit;
     }
 
-    public Pageable build(){
+    public Pageable build() {
         return PageRequest.of(page, limit);
     }
 
