@@ -26,12 +26,14 @@ type Query {
     findAuthorById(id: String!): Author
     findAllBooks: [Book]
     findBookById(id: String!): Book
+    findAuthorByFirstName(firstname:String): [Author]
 }
 
 #Mutations
 type Mutation {
     createAuthor(author: AuthorCreateInput!): Author
     createBook(book: BookCreateInput!): Book
+    deleteAuthor(id: String!): Author
 }
 
 #Core

@@ -6,6 +6,8 @@ import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class AuthorMutationResolver extends ExtendedResolver<Author> implements GraphQLMutationResolver {
 
@@ -19,5 +21,12 @@ public class AuthorMutationResolver extends ExtendedResolver<Author> implements 
     public Author createAuthor(AuthorCreateInput authorCreateInput) {
         Author author = authorRepository.save(new Author(authorCreateInput.getFirstName(), authorCreateInput.getLastName()));
         return findOrThrow(authorRepository.findById(author.getId()));
+    }
+
+    public Author deleteAuthor(String id) {
+        Author responseAuthor = authorRepository.findById(UUID.fromString(id)).orElseThrow();
+        authorRepository.delete(authorRepository.findById(UUID.fromString(id)).orElseThrow());
+        return responseAuthor;
+
     }
 }

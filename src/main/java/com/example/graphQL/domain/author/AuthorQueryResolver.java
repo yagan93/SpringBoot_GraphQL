@@ -2,6 +2,7 @@ package com.example.graphQL.domain.author;
 
 import com.example.graphQL.core.GraphQLPagination;
 import com.example.graphQL.core.generic.ExtendedResolver;
+import com.example.graphQL.domain.author.specification.CustomerSpecifications;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,10 +14,12 @@ import java.util.UUID;
 public class AuthorQueryResolver extends ExtendedResolver<Author> implements GraphQLQueryResolver {
 
     private AuthorRepository authorRepository;
+    private CustomerSpecifications customerSpecifications;
 
     @Autowired
-    public AuthorQueryResolver(AuthorRepository authorRepository) {
+    public AuthorQueryResolver(AuthorRepository authorRepository, CustomerSpecifications customerSpecifications) {
         this.authorRepository = authorRepository;
+        this.customerSpecifications = customerSpecifications;
     }
 
     public List<Author> findAllAuthors(GraphQLPagination pagination) {
@@ -25,5 +28,9 @@ public class AuthorQueryResolver extends ExtendedResolver<Author> implements Gra
 
     public Author findAuthorById(String id) {
         return findOrThrow(authorRepository.findById(UUID.fromString(id)));
+    }
+
+    public List<Author> findAuthorByFirstName(String firstname) {
+        return authorRepository.findAll(customerSpecifications.hasAuthorFirstName(firstname));
     }
 }
