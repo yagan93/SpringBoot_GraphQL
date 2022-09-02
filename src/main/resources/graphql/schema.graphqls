@@ -14,6 +14,7 @@ input AuthorCreateInput {
 type Book {
     id: String
     title: String
+    price: Float
 }
 
 input BookCreateInput {
