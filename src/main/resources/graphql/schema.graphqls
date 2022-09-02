@@ -22,7 +22,7 @@ input BookCreateInput {
 }
 
 type Query {
-    findAllAuthors: [Author]
+    findAllAuthors(pagination: Pagination!): [Author]
     findAuthorById(id: String!): Author
     findAllBooks: [Book]
     findBookById(id: String!): Book
@@ -33,3 +33,10 @@ type Mutation {
     createAuthor(author: AuthorCreateInput!): Author
     createBook(book: BookCreateInput!): Book
 }
+
+#Core
+input Pagination{
+    page: Int
+    limit: Int
+}
+

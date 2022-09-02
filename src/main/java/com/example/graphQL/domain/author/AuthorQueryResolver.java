@@ -1,5 +1,6 @@
 package com.example.graphQL.domain.author;
 
+import com.example.graphQL.core.GraphQLPagination;
 import com.example.graphQL.core.generic.ExtendedResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class AuthorQueryResolver extends ExtendedResolver<Author> implements Gra
         this.authorRepository = authorRepository;
     }
 
-    public List<Author> findAllAuthors() {
-        return authorRepository.findAll();
+    public List<Author> findAllAuthors(GraphQLPagination pagination) {
+        return authorRepository.findAll(pagination.build()).getContent();
     }
 
     public Author findAuthorById(String id) {
