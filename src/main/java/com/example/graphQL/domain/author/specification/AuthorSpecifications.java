@@ -11,3 +11,4 @@ public class AuthorSpecifications {
         return (root, query, builder) -> builder.equal(root.get(Author_.FIRST_NAME), firstName);
     }
 }
+
